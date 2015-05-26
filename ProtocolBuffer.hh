@@ -31,6 +31,9 @@
  * floating point up to 32-bits. 64-bit integers and double are not
  * supported. Support length delimited blocks from both SRAM and
  * PROGMEM.
+ *
+ * @section references
+ * 1. Google Protocol Buffers, https://developers.google.com/protocol-buffers/.
  */
 class ProtocolBuffer {
 public:
