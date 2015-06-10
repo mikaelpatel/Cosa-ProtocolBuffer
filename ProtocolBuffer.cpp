@@ -24,7 +24,7 @@
 int
 ProtocolBuffer::getchar()
 {
-  if (m_ins == NULL) return (EINVAL);
+  if (UNLIKELY(m_ins == NULL)) return (EINVAL);
   while (!m_ins->available()) yield();
   return (m_ins->getchar());
 }
@@ -76,8 +76,8 @@ int
 ProtocolBuffer::read(void* buf, uint8_t count)
 {
   uint8_t size = getchar();
-  if (size > count) return (E2BIG);
-  if (size == 0) return (0);
+  if (UNLIKELY(size > count)) return (E2BIG);
+  if (UNLIKELY(size == 0)) return (0);
   int res = size;
   uint8_t* bp = (uint8_t*) buf;
   while (size--) *bp++ = getchar();
