@@ -24,7 +24,7 @@
 #include <ProtocolBuffer.h>
 
 #include "Cosa/Trace.hh"
-#include "Cosa/IOStream/Driver/UART.hh"
+#include "Cosa/UART.hh"
 #include "Cosa/IOBuffer.hh"
 #include "Cosa/Memory.h"
 
